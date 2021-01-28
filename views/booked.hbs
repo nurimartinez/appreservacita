@@ -1,0 +1,22 @@
+<header class="logo">
+  <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+  <h1 class="logo-text">Barber Shop</h1>
+</header>
+<main class="main-booked">
+  <section class="booked-info">
+    <h2 class="booked-title">Reserva confirmada</h2>
+    <div class="booked-text">
+      <p>Número de reserva: {{user.id}}</p>
+      <p>{{user.name}}, aquí está el código QR con los datos de tu reserva.</p>
+      <canvas id="canvas"></canvas>
+    </div>
+    <script src="/js/qrcode/build/qrcode.min.js"></script>
+    <a class="booked-button" href="/">Inicio</a>
+  </section>
+</main>
+
+<script>
+  QRCode.toCanvas(document.getElementById('canvas'), '{{user.name}}, tu reserva es el día {{user.date}} a las {{user.hour}}', function (error) {
+    if (error) console.error(error);
+  })
+</script>

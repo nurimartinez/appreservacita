@@ -1,0 +1,432 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  padding-top: 40px;
+}
+.logo-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+}
+.logo-text {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #000;
+  margin-top: 0;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 2px #ffe713;
+}
+
+.footer {
+  background-color: #000;
+  width: 100%;
+  height: 22px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.footer-text {
+  text-align: center;
+  line-height: 22px;
+  margin: 0;
+}
+.footer-text a {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.main-index {
+  padding-top: 130px;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.main-index .index-button {
+  height: 80px;
+  background-color: #333331;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: 1.5px 1.5px 4px #ffe713;
+  outline: 0.5px solid rgba(255, 255, 255, 0.623);
+  outline-offset: -6px;
+}
+.main-index .index-button a {
+  width: 100%;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+}
+
+.logo-form {
+  padding-top: 10px;
+}
+
+.main-form {
+  padding: 10px;
+  width: 85%;
+  background-color: #333331;
+  border-radius: 7px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+.main-form #hour {
+  margin-top: 5px;
+}
+.main-form .hours {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.main-form .hours p {
+  margin: 0 10px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #fff;
+  color: #000;
+}
+.main-form .errorForm {
+  color: #ffe713;
+  font-size: 0.8rem;
+}
+.main-form input {
+  font-size: 0.9rem;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #ffe713;
+  margin-bottom: 5px;
+  background-color: #6161606b;
+  border-radius: 5px 5px 0 0;
+}
+.main-form .form-buttons,
+.main-form .modify-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.main-form .form-buttons [type=button],
+.main-form .form-buttons [type=submit],
+.main-form .modify-buttons [type=button],
+.main-form .modify-buttons [type=submit] {
+  color: #000;
+  width: 48%;
+  background-color: #ffe713;
+  border-radius: 5px;
+}
+
+.main-pending,
+.main-cancelok,
+.main-booked {
+  width: 80%;
+  background-color: #333331;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid #fff;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px #ffe713;
+}
+.main-pending .pending-info,
+.main-pending .cancelok-info,
+.main-pending .booked-info,
+.main-cancelok .pending-info,
+.main-cancelok .cancelok-info,
+.main-cancelok .booked-info,
+.main-booked .pending-info,
+.main-booked .cancelok-info,
+.main-booked .booked-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-pending .pending-info .pending-title,
+.main-pending .pending-info .cancelok-title,
+.main-pending .pending-info .booked-title,
+.main-pending .cancelok-info .pending-title,
+.main-pending .cancelok-info .cancelok-title,
+.main-pending .cancelok-info .booked-title,
+.main-pending .booked-info .pending-title,
+.main-pending .booked-info .cancelok-title,
+.main-pending .booked-info .booked-title,
+.main-cancelok .pending-info .pending-title,
+.main-cancelok .pending-info .cancelok-title,
+.main-cancelok .pending-info .booked-title,
+.main-cancelok .cancelok-info .pending-title,
+.main-cancelok .cancelok-info .cancelok-title,
+.main-cancelok .cancelok-info .booked-title,
+.main-cancelok .booked-info .pending-title,
+.main-cancelok .booked-info .cancelok-title,
+.main-cancelok .booked-info .booked-title,
+.main-booked .pending-info .pending-title,
+.main-booked .pending-info .cancelok-title,
+.main-booked .pending-info .booked-title,
+.main-booked .cancelok-info .pending-title,
+.main-booked .cancelok-info .cancelok-title,
+.main-booked .cancelok-info .booked-title,
+.main-booked .booked-info .pending-title,
+.main-booked .booked-info .cancelok-title,
+.main-booked .booked-info .booked-title {
+  color: #ffe713;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.main-pending .pending-info .pending-text,
+.main-pending .pending-info .cancelok-text,
+.main-pending .pending-info .booked-text,
+.main-pending .cancelok-info .pending-text,
+.main-pending .cancelok-info .cancelok-text,
+.main-pending .cancelok-info .booked-text,
+.main-pending .booked-info .pending-text,
+.main-pending .booked-info .cancelok-text,
+.main-pending .booked-info .booked-text,
+.main-cancelok .pending-info .pending-text,
+.main-cancelok .pending-info .cancelok-text,
+.main-cancelok .pending-info .booked-text,
+.main-cancelok .cancelok-info .pending-text,
+.main-cancelok .cancelok-info .cancelok-text,
+.main-cancelok .cancelok-info .booked-text,
+.main-cancelok .booked-info .pending-text,
+.main-cancelok .booked-info .cancelok-text,
+.main-cancelok .booked-info .booked-text,
+.main-booked .pending-info .pending-text,
+.main-booked .pending-info .cancelok-text,
+.main-booked .pending-info .booked-text,
+.main-booked .cancelok-info .pending-text,
+.main-booked .cancelok-info .cancelok-text,
+.main-booked .cancelok-info .booked-text,
+.main-booked .booked-info .pending-text,
+.main-booked .booked-info .cancelok-text,
+.main-booked .booked-info .booked-text {
+  color: #fff;
+  margin: 5px 0;
+  padding: 0 10px;
+  text-align: center;
+}
+.main-pending .pending-info .pending-button,
+.main-pending .pending-info .cancelok-button,
+.main-pending .pending-info .booked-button,
+.main-pending .cancelok-info .pending-button,
+.main-pending .cancelok-info .cancelok-button,
+.main-pending .cancelok-info .booked-button,
+.main-pending .booked-info .pending-button,
+.main-pending .booked-info .cancelok-button,
+.main-pending .booked-info .booked-button,
+.main-cancelok .pending-info .pending-button,
+.main-cancelok .pending-info .cancelok-button,
+.main-cancelok .pending-info .booked-button,
+.main-cancelok .cancelok-info .pending-button,
+.main-cancelok .cancelok-info .cancelok-button,
+.main-cancelok .cancelok-info .booked-button,
+.main-cancelok .booked-info .pending-button,
+.main-cancelok .booked-info .cancelok-button,
+.main-cancelok .booked-info .booked-button,
+.main-booked .pending-info .pending-button,
+.main-booked .pending-info .cancelok-button,
+.main-booked .pending-info .booked-button,
+.main-booked .cancelok-info .pending-button,
+.main-booked .cancelok-info .cancelok-button,
+.main-booked .cancelok-info .booked-button,
+.main-booked .booked-info .pending-button,
+.main-booked .booked-info .cancelok-button,
+.main-booked .booked-info .booked-button {
+  border-radius: 5px;
+  background-color: #99999559;
+  margin: 15px;
+  padding: 5px 30px;
+  color: rgba(0, 0, 0, 0.603);
+  letter-spacing: 3px;
+  font-weight: bolder;
+}
+
+.modify-form,
+.cancel-form,
+.check-form {
+  padding: 30px 0;
+  width: 80%;
+  background-color: #333331;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid #fff;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px #ffe713;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.modify-form .modify-title,
+.modify-form .cancel-title,
+.modify-form .check-title,
+.cancel-form .modify-title,
+.cancel-form .cancel-title,
+.cancel-form .check-title,
+.check-form .modify-title,
+.check-form .cancel-title,
+.check-form .check-title {
+  color: #ffe713;
+  font-size: 1.2rem;
+}
+.modify-form .cancel-text,
+.cancel-form .cancel-text,
+.check-form .cancel-text {
+  color: #fff;
+  margin: 5px 0;
+  padding: 20px 15px;
+  text-align: center;
+}
+.modify-form .errorForm,
+.cancel-form .errorForm,
+.check-form .errorForm {
+  text-align: center;
+  padding: 0 20px;
+  color: #ffe713;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+.modify-form label,
+.cancel-form label,
+.check-form label {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.modify-form input,
+.modify-form .cancel-input,
+.cancel-form input,
+.cancel-form .cancel-input,
+.check-form input,
+.check-form .cancel-input {
+  font-size: 0.9rem;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #ffe713;
+  background-color: #6161606b;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.modify-form .modify-buttons,
+.modify-form .cancel-buttons,
+.modify-form .check-buttons,
+.cancel-form .modify-buttons,
+.cancel-form .cancel-buttons,
+.cancel-form .check-buttons,
+.check-form .modify-buttons,
+.check-form .cancel-buttons,
+.check-form .check-buttons {
+  width: 70%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.modify-form .modify-buttons [type=button],
+.modify-form .modify-buttons [type=submit],
+.modify-form .cancel-buttons [type=button],
+.modify-form .cancel-buttons [type=submit],
+.modify-form .check-buttons [type=button],
+.modify-form .check-buttons [type=submit],
+.cancel-form .modify-buttons [type=button],
+.cancel-form .modify-buttons [type=submit],
+.cancel-form .cancel-buttons [type=button],
+.cancel-form .cancel-buttons [type=submit],
+.cancel-form .check-buttons [type=button],
+.cancel-form .check-buttons [type=submit],
+.check-form .modify-buttons [type=button],
+.check-form .modify-buttons [type=submit],
+.check-form .cancel-buttons [type=button],
+.check-form .cancel-buttons [type=submit],
+.check-form .check-buttons [type=button],
+.check-form .check-buttons [type=submit] {
+  color: #000;
+  width: 48%;
+  background-color: #ffe713;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+.list {
+  text-align: center;
+  padding: 30px 20px;
+  width: 80%;
+  background-color: #333331;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid #fff;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px #ffe713;
+}
+.list .list-title1 {
+  text-align: center;
+  color: #ffe713;
+  font-size: 1.2rem;
+}
+.list .list-block {
+  margin-bottom: 15px;
+}
+.list .list-block .list-title2 {
+  padding-bottom: 7px;
+  border-bottom: 1px solid #000;
+  margin: 0;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.623);
+}
+.list .list-block .list-date {
+  letter-spacing: 3px;
+  font-size: 0.9rem;
+  color: #000;
+  margin: 0 0 2px;
+}
+.list .list-block p {
+  margin: 0;
+  color: #fff;
+}
+.list .list-button {
+  border: none;
+  color: #000;
+  display: block;
+  width: 48%;
+  margin: 25px auto 0;
+  background-color: #ffe713;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+/*# sourceMappingURL=base.css.map */

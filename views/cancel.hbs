@@ -1,0 +1,16 @@
+<header class="logo">
+  <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+  <h1 class="logo-text">Barber Shop</h1>
+</header>
+<form class="cancel-form" method="POST" action="/citas/cancelado">
+  <h2 class="cancel-title">Cancelación de reserva</h2>
+  <label for="number">Número de reserva:</label>
+  <input class="cancel-input" type="text" id="number" name="number" value="{{ user.id }}" readonly>
+  <p class="cancel-text">
+    ¡Hola, {{user.name}}! ¿Quieres realmente cancelar tu reserva para el día {{user.date}} a las {{user.hour}}?
+  </p>
+  <div class="cancel-buttons">
+    <input type="button" value="Inicio" id="home" onclick="location.href='/'">
+    <input type="submit" value="Sí">
+  </div>
+</form>

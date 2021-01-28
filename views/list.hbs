@@ -1,0 +1,28 @@
+<header class="logo">
+  <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+  <h1 class="logo-text">Barber Shop</h1>
+</header>
+<section class="list">
+  <h2 class="list-title1">Lista de reservas</h2>
+  {{#if listBookings}}
+  <article class="list-block">
+    <h3 class="list-title2">Reservas actuales</h3>
+    {{#each bookings}}
+    <h4 class="list-date">Cita</h4>
+    <p>Identificador: {{id}}</p>
+    <p>Fecha y hora: {{date}} {{hour}}</p>
+    {{/each}}
+  </article>
+  {{/if}}
+  {{#if listOldBookings}}
+  <article class="list-block">
+    <h3 class="list-title2">Reservas pasadas</h3>
+    {{#each oldBookings}}
+    <h4 class="list-date">Cita</h4>
+    <p>Identificador: {{id}}</p>
+    <p>Fecha y hora: {{date}} {{hour}}</p>
+    {{/each}}
+  </article>
+  {{/if}}
+    <input class="list-button" type="button" value="Inicio" id="home" onclick="location.href='/'">
+</section>

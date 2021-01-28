@@ -1,0 +1,19 @@
+<header class="logo">
+    <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+    <h1 class="logo-text">Barber Shop</h1>
+</header>
+<form class="modify-form" method="POST" action={{ action }}>
+  <h2 class="modify-title">{{title}} reserva</h2>
+  <label for="number">Número de reserva:</label>
+  <input type="number" id="number" name="number" autocomplete="off">
+  {{#if errorId}}
+    <div class="errorForm">Su número de reserva no existe</div>
+  {{/if}}
+  {{#if errorHour}}
+    <div class="errorForm">No puede modificar su reserva con menos de 24 h de antelación</div>
+  {{/if}}
+  <div class="modify-buttons">
+    <input type="button" value="Inicio" id="home" onclick="location.href='/'">
+    <input type="submit" value="{{title}}">
+  </div>
+</form>

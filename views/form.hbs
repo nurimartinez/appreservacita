@@ -1,0 +1,49 @@
+  <header class="logo-form">
+    <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+    <h1 class="logo-text">Barber Shop</h1>
+  </header>
+<form class="main-form" method="POST" action={{ action }}>
+  {{#if id}}
+  <input type="text" id="number" name="number" value="{{ user.id }}" readonly>
+  {{/if}}
+  <input type="text" id="name" name="name" value="{{ user.name }}" placeholder="Nombre">
+  {{#if errors.name}}
+  <div class="errorForm">El nombre está mal escrito</div>
+  {{/if}}
+  <input type="tel" id="phone" name="phone" value="{{ user.phone }}" placeholder="Teléfono">
+  {{#if errors.phone}}
+  <div class="errorForm">El teléfono está mal escrito</div>
+  {{/if}}
+  <input type="text" id="email" name="email" value="{{ user.email }}" placeholder="Email">
+  {{#if errors.email}}
+  <div class="errorForm">El email está mal escrito</div>
+  {{/if}}
+  <input type="date" id="date" name="date" placeholder="Fecha" readonly>
+  <input type="text" id="hour" name="hour" placeholder="Hora" value="{{ user.hour }}" readonly>
+  {{#if errors.hour}}
+  <div class="errorForm">Selecciona una hora</div>
+  {{/if}}
+  <div class="hours"></div>
+  <div class="form-buttons">
+    <input type="button" value="Inicio" id="home" onclick="location.href='/'">
+    <input type="submit" value="Enviar">
+  </div>
+</form>
+
+<script>
+  const myInput = document.querySelector("#date");
+  const fp = flatpickr(myInput, {
+    inline: true,
+    dateFormat: "d-m-Y",
+    minDate: "today",
+    defaultDate: "{{ user.date }}",
+    maxDate: new Date().fp_incr(90),
+    disable: [
+      function (date) {return (date.getDay() === 0 || date.getDay() === 6);},
+    {{#each occupiedDates}}
+      "{{{this}}}",
+    {{/each}}
+    ]
+  });
+</script>
+<script src="/js/scriptform.js"></script>

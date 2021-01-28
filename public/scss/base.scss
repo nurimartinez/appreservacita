@@ -1,0 +1,355 @@
+//Variables
+$yellow: #ffe713;
+$black: #000;
+$white: #fff;
+$gray: #333331;
+
+//Estilos generales
+* {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  background-image: url("../img/background.jpg");
+  background-position: top center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+//Estilos específicos base
+.logo {
+  padding-top: 40px;
+
+  &-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+
+  &-text {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 900;
+    color: $black;
+    margin-top: 0;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 2px $yellow;
+  }
+}
+
+.footer {
+  background-color: $black;
+  width: 100%;
+  height: 22px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  &-text {
+    text-align: center;
+    line-height: 22px;
+    margin: 0;
+
+    a {
+      color: $white;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+//Estilos específicos Index
+.main-index {
+  padding-top: 130px;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .index-button {
+    height: 80px;
+    background-color: $gray;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: 1.5px 1.5px 4px $yellow;
+    outline: 0.5px solid rgba(255, 255, 255, 0.623);
+    outline-offset: -6px;
+  }
+
+  .index-button a {
+    width: 100%;
+    color: $white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+  }
+}
+
+//Estilos específicos formulario
+.logo-form {
+  padding-top: 10px;
+}
+.main-form {
+  padding: 10px;
+  width: 85%;
+  background-color: $gray;
+  border-radius: 7px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+
+  #hour {
+    margin-top: 5px;
+  }
+
+  .hours {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+
+    p {
+      margin: 0 10px;
+      padding: 0 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      background-color: $white;
+      color: $black;
+    }
+  }
+
+  .errorForm {
+    color: $yellow;
+    font-size: 0.8rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+    color: $white;
+    border: none;
+    border-bottom: 1px solid $yellow;
+    margin-bottom: 5px;
+    background-color: #6161606b;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .form-buttons,
+  .modify-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    [type="button"],
+    [type="submit"] {
+      color: $black;
+      width: 48%;
+      background-color: $yellow;
+      border-radius: 5px;
+    }
+  }
+}
+
+//Estilos específicos pantalla de espera de confirmación
+.main-pending,
+.main-cancelok,
+.main-booked {
+  width: 80%;
+  background-color: $gray;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid $white;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px $yellow;
+
+  .pending-info,
+  .cancelok-info,
+  .booked-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .pending-title,
+    .cancelok-title,
+    .booked-title {
+      color: $yellow;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .pending-text,
+    .cancelok-text,
+    .booked-text {
+      color: $white;
+      margin: 5px 0;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    .pending-button,
+    .cancelok-button,
+    .booked-button {
+      border-radius: 5px;
+      background-color: #99999559;
+      margin: 15px;
+      padding: 5px 30px;
+      color: rgba(0, 0, 0, 0.603);
+      letter-spacing: 3px;
+      font-weight: bolder;
+    }
+  }
+}
+
+//Estilos específicos para Modificar/Cancelar
+
+.modify-form,
+.cancel-form,
+.check-form {
+  padding: 30px 0;
+  width: 80%;
+  background-color: $gray;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid $white;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px $yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .modify-title,
+  .cancel-title,
+  .check-title {
+    color: $yellow;
+    font-size: 1.2rem;
+  }
+
+  .cancel-text {
+    color: $white;
+    margin: 5px 0;
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .errorForm {
+    text-align: center;
+    padding: 0 20px;
+    color: $yellow;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 0.9rem;
+    color: $white;
+    margin-bottom: 10px;
+  }
+
+  input,
+  .cancel-input {
+    font-size: 0.9rem;
+    color: $white;
+    border: none;
+    border-bottom: 1px solid $yellow;
+    background-color: #6161606b;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .modify-buttons,
+  .cancel-buttons,
+  .check-buttons {
+    width: 70%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+
+    [type="button"],
+    [type="submit"] {
+      color: $black;
+      width: 48%;
+      background-color: $yellow;
+      border-radius: 5px;
+      padding: 5px 0;
+    }
+  }
+}
+
+//Estilos específicos listado de citas
+
+.list {
+  text-align: center;
+  padding: 30px 20px;
+  width: 80%;
+  background-color: $gray;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+  outline: 1px solid $white;
+  outline-offset: -6px;
+  box-shadow: 1.5px 1.5px 4px $yellow;
+
+  .list-title1 {
+    text-align: center;
+    color: $yellow;
+    font-size: 1.2rem;
+  }
+
+  .list-block {
+    margin-bottom: 15px;
+
+    .list-title2 {
+      padding-bottom: 7px;
+      border-bottom: 1px solid $black;
+      margin: 0;
+      margin-bottom: 5px;
+      color:rgba(255, 255, 255, 0.623);
+    }
+
+    .list-date {
+      letter-spacing: 3px;
+      font-size: 0.9rem;
+      color: $black;
+      margin: 0 0 2px;
+    }
+
+    p {
+      margin: 0;
+      color: $white;
+    }
+  }
+  .list-button {
+    border: none;
+    color: $black;
+    display: block;
+    width: 48%;
+    margin: 25px auto 0;
+    background-color: $yellow;
+    border-radius: 5px;
+    padding: 5px 0;
+    }
+}

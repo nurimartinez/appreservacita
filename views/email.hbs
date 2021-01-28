@@ -1,0 +1,19 @@
+<header class="logo">
+  <img class="logo-img" src="/img/logobg.png" alt="Logotipo XOXO Barber Shop">
+  <h1 class="logo-text">Barber Shop</h1>
+</header>
+<form method="POST" action="/citas/consultado" class="check-form">
+  <h2 class="check-title">Consultar reservas</h2>
+  <label for="email">Introduce tu mail:</label>
+  <input type="text" id="email" name="email" autocomplete="off">
+  {{#if error}}
+  <div class="errorForm">No hay reservas asociadas a este email</div>
+  {{/if}}
+  {{#if resolve}}
+  <div class="errorForm">Le hemos enviado un correo para poder ver sus reservas</div>
+  {{/if}}
+  <div class="check-buttons">
+    <input type="button" value="Inicio" id="home" onclick="location.href='/'">
+    <input type="submit" value="Consultar">
+  </div>
+</form>
