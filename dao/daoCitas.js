@@ -76,7 +76,6 @@ daoCitas.searchUserTotal=function searchUserTotal(email){
     if(user.email==email)
       userBookings.push(user)
   })
-  console.log(oldBookings)
   oldBookings.forEach(user=>{
     if(user.email==email)
       userOldBookings.push(user)
