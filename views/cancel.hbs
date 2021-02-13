@@ -7,7 +7,7 @@
   <label for="number">Número de reserva:</label>
   <input class="cancel-input" type="text" id="number" name="number" value="{{ user.id }}" readonly>
   <p class="cancel-text">
-    ¡Hola, {{user.name}}! ¿Quieres realmente cancelar tu reserva para el día {{user.date}} a las {{user.hour}}?
+    ¡Hola, {{user.name}}! ¿Quieres realmente cancelar tu reserva del {{user.date}} a las {{user.hour}}?
   </p>
   <div class="cancel-buttons">
     <input type="button" value="Inicio" id="home" onclick="location.href='/'">
